@@ -1,4 +1,4 @@
-name: Payment-services Pipeline
+name: Payment-services Pipeline code
 
 on:
   push:

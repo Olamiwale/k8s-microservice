@@ -1,4 +1,4 @@
-name: User-services Pipeline
+name: User-service Pipeline
 
 on:
   push:
