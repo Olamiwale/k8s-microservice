@@ -1,4 +1,4 @@
-name: OIDC login to Azure
+name: OIDC Pipeline
 
 on:
   push:

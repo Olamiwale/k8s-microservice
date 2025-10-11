@@ -1,4 +1,4 @@
-name: Order-services Pipeline code
+name: Order Pipeline code
 
 on:
   push:
