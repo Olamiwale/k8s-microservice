@@ -1,0 +1,6 @@
+resources:
+  - namespace.yaml
+  - gateway.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: k8s

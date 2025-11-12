@@ -2,47 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: order-deployment
-  namespace: briitz
+  namespace: k8s
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
-      app: order
+      app: order-service
   template:
     metadata:
       labels:
-        app: order
+        app: order-service
     spec:
       containers:
-        - name: order
-          image: briitzacr.azurecr.io/microservices-orders:placeholder
+        - name: order-service
+          image: briitzacr.azurecr.io/order-service:v1
           ports:
             - containerPort: 3000
-
-     #.........resource management......#       
           resources:
             requests:
               cpu: "100m"
-              memory: "128Mi" 
+              memory: "128Mi"
             limits:
               cpu: "500m"
               memory: "256Mi"
-
-      #........health checks.........#
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            timeoutSeconds: 2
-            failureThreshold: 3
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 2
-            failureThreshold: 3
-              

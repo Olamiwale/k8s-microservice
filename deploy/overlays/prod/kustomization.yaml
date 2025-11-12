@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+namePrefix: prod-
+namespace: k8s
+
+commonLabels:
+  env: prod
+
+patchesStrategicMerge:
+  

@@ -8,3 +8,6 @@ terraform/
 monitoring/
 
 .github/workflows/
+
+service/order/node_modules
+service/user/node_modules
