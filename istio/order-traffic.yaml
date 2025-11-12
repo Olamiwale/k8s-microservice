@@ -1,4 +1,28 @@
 apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: order-virtualservice
+  namespace: k8s
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - k8s/k8s-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /order-service
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: order-service
+        port:
+          number: 80
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: order-service
