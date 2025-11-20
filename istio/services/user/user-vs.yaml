@@ -30,9 +30,7 @@ spec:
           number: 80
   - match:
     - uri:
-        prefix: /user/
-    rewrite:
-      uri: /
+        prefix: /user
     timeout: 10s
     retries:
       attempts: 3

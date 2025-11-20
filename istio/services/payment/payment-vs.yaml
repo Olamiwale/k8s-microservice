@@ -11,7 +11,7 @@ spec:
   http:
     - match:
       - uri:
-          prefix: /payment
+          prefix: /payment/
       rewrite:
         uri: /
       timeout: 10s

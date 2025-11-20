@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: briitzacr.azurecr.io/user-service:v6
+          image: briitzacr.azurecr.io/user-service:v7
           ports:
             - containerPort: 8080
           resources:
