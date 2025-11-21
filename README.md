@@ -278,4 +278,4 @@ This project demonstrates **real-world DevOps, SRE, and microservice patterns** 
 It is suitable for **portfolio, interviews, cloud engineering practice, and Kubernetes learning**.
 
 
-[Kalia-screenshot](zzz/images/kalia.png)
+![Kalia-screenshot](zzz/images/kalia.png)
