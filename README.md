@@ -260,7 +260,15 @@ istioctl dashboard grafana
 ✔ Fault injection tests
 ✔ Observability suite
 
+---
 
+## Future Improvements
+
+* API Gateway / BFF layer
+* CI/CD automation with GitHub Actions
+* Autoscaling using KEDA
+* Distributed caching (Redis or Memcached)
+* Event-driven architecture with Kafka
 
 ---
 
@@ -268,3 +276,6 @@ istioctl dashboard grafana
 
 This project demonstrates **real-world DevOps, SRE, and microservice patterns** used in production systems.
 It is suitable for **portfolio, interviews, cloud engineering practice, and Kubernetes learning**.
+
+
+[Kalia-screenshot](zzz/images/kalia.png)
