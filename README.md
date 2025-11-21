@@ -34,7 +34,7 @@ The architecture of this project consists **eight services**, each independently
 
 ## Istio Features Implemented
 
-### **Service Mesh**
+#### **Service Mesh**
     - Automatic Envoy sidecar injection  
     - mTLS (STRICT mode) for all internal communication  
     - Authentication & encryption inside mesh  
