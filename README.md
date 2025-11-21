@@ -40,25 +40,25 @@ The architecture of this project consists **eight services**, each independently
     - Authentication & encryption inside mesh  
     - Internal routing using VirtualServices  
 
-### **Traffic Management**
+#### **Traffic Management**
     - Canary deployments (90% v1 / 10% v2)  
     - Subset-based routing via DestinationRules  
     - Load balancing (ROUND_ROBIN)  
     - Ingress routing through a single Istio Gateway  
 
-### **Resilience Patterns**
+#### **Resilience Patterns**
     - Circuit breaking  
     - Outlier detection (ejects bad pods)  
     - Automatic retries (3 attempts, 2s timeout)  
     - Global timeouts for stability  
     - Connection pooling to avoid saturation  
 
-### **Fault Injection**
+#### **Fault Injection**
     - Delay injection  
     - HTTP aborts (503 error simulation)  
     - Controlled chaos testing  
 
-### **Observability**
+#### **Observability**
    - **Kiali** — Mesh topology & traffic flow  
    - **Grafana** — Metrics dashboards  
    - **Jaeger** — Distributed tracing  
@@ -66,7 +66,7 @@ The architecture of this project consists **eight services**, each independently
 
 ---
 
-# Prerequisites
+### Prerequisites
 Install the following before starting:
 
 - **Python** — https://www.python.org  
@@ -79,7 +79,7 @@ Install the following before starting:
 
 ---
 
-# 📁 Project Setup & File Tree
+### Project Setup & File Tree
 
 A simplified file structure:
 
@@ -119,10 +119,10 @@ Ecommerce/
 
 
 
-# Step 1 — Build & Test Services Locally  
+#### Step 1 — Build & Test Services Locally  
 Each service was developed and tested locally using Node.js, Python, or Go to confirm output, routes, and inter-service behavior.
 
-# 🐳 Step 2 — Dockerizing Each Service
+#### Step 2 — Dockerizing Each Service
 
   **Log in to ACR**
 
@@ -139,7 +139,7 @@ Repeat for all services (cart, order, product, etc.).
 
 
 
-# ☸️ Step 3 — Kubernetes Deployment
+#### Step 3 — Kubernetes Deployment
 
 Create namespace:
 
@@ -172,7 +172,7 @@ kubectl get svc -n k8s
 
 ---
 
-# 🌐 Step 4 — Install & Configure Istio
+#### Step 4 — Install & Configure Istio
 
 Install Istio:
 
@@ -197,7 +197,7 @@ kubectl get pods -n istio-system
 
 ---
 
-# ⚙️ Step 5 — Apply Istio Configuration
+#### Step 5 — Apply Istio Configuration
 
 Each service receives:
 
@@ -219,7 +219,7 @@ curl http://<INGRESS-IP>/user
 
 ---
 
-# 📊 Step 6 — Observability
+#### Step 6 — Observability
 
 Port-forward or use ingress:
 
@@ -248,7 +248,7 @@ istioctl dashboard grafana
 ```
 
 
-# 🌈 Completed Features
+#### Completed Features
 
 ✔ 7 microservices
 ✔ Kubernetes deployments
@@ -260,19 +260,11 @@ istioctl dashboard grafana
 ✔ Fault injection tests
 ✔ Observability suite
 
----
 
-# 📌 Future Improvements
-
-* API Gateway / BFF layer
-* CI/CD automation with GitHub Actions
-* Autoscaling using KEDA
-* Distributed caching (Redis or Memcached)
-* Event-driven architecture with Kafka
 
 ---
 
-# 🏁 Final Notes
+## Final Notes
 
 This project demonstrates **real-world DevOps, SRE, and microservice patterns** used in production systems.
 It is suitable for **portfolio, interviews, cloud engineering practice, and Kubernetes learning**.
