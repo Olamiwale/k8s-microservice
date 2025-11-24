@@ -140,7 +140,7 @@ Verify:
 
 A simplified file structure:
 
-
+```
 Ecommerce/
 ├── istio
 │ ├── services
@@ -174,7 +174,7 @@ Ecommerce/
 ├── .gitignore
 └── README.md
 
-
+```
 
 #### Step 1 — Enviroment s up Cluster and Build Services   
 Each service was developed and tested locally using Node.js, Python, or Go to confirm output, routes, and inter-service behavior.
@@ -219,7 +219,7 @@ kubectl get deploy -n k8s
 kubectl get pods -n k8s
 kubectl get svc -n k8s
 ```
-![Kalia-screenshot](./z/deploy.png)
+![Kalia-screenshot](./z-image/deploy.png)
 
 
 
@@ -249,7 +249,7 @@ kubectl get destinationrule -n <namespace>
 kubectl get peerauthentication -n <namespace>
 
 
-![istio-screenshot](./z/istio-deploy.png)
+![istio-screenshot](./z-image/istio-deploy.png)
 
 Test external access:
 
@@ -265,11 +265,11 @@ curl http://<INGRESS-IP>/user
 ```
 istioctl dashboard kiali
 ```
-![Kalia-screenshot](./z/kiali.png)
+![Kalia-screenshot](./z-image/kiali.png)
 
 ### **Grafana**
 
-![Kalia-screenshot](./z/grafana.png)
+![Kalia-screenshot](./z-image/grafana.png)
 
 
 #### Completed Features
