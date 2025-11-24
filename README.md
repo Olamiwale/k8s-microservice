@@ -8,7 +8,7 @@ This is a production-grade microservices e-commerce system showcasing **DevOps b
 
 The architecture of this project consists **eight services**, each independently deployed, containerized, and managed inside Kubernetes with **full observability, mTLS, canary releases, retries, circuit-breaking, and fault injection**.
 
-
+```
 ┌────────────────────────────────────────────────────────────────┐
 │                      Istio Ingress Gateway                     │
 │                           (mTLS)                               │
@@ -40,6 +40,7 @@ The architecture of this project consists **eight services**, each independently
    │Service│ │Service  │  │  Service │ │   Service  │
    │       │ │         │  │          │ │            │
    └───────┘ └─────────┘  └──────────┘ └────────────┘
+```
 
 
 
@@ -218,6 +219,9 @@ kubectl get deploy -n k8s
 kubectl get pods -n k8s
 kubectl get svc -n k8s
 ```
+![Kalia-screenshot](./z/deploy.png)
+
+
 
 **Note:** All services use `ClusterIP` because Istio manages traffic internally
           App listen Port must match the container to avoid upstream error 
@@ -237,6 +241,16 @@ kubectl apply -f istio/user-destinationrule.yaml
 kubectl apply -f istio/user-peerauthentication.yaml
 ```
 
+
+Check Status
+
+kubectl get virtualservice -n <namespace>
+kubectl get destinationrule -n <namespace>
+kubectl get peerauthentication -n <namespace>
+
+
+![istio-screenshot](./z/istio-deploy.png)
+
 Test external access:
 
 ```bash
@@ -251,25 +265,11 @@ curl http://<INGRESS-IP>/user
 ```
 istioctl dashboard kiali
 ```
-![Kalia-screenshot](./z/deploy.png)
-
-### **Jaeger**
-
-```
-istioctl dashboard jaeger
-```
-
-### **Prometheus**
-
-```
-istioctl dashboard prometheus
-```
+![Kalia-screenshot](./z/kiali.png)
 
 ### **Grafana**
 
-```
-istioctl dashboard grafana
-```
+![Kalia-screenshot](./z/grafana.png)
 
 
 #### Completed Features
@@ -284,21 +284,5 @@ istioctl dashboard grafana
 ✔ Fault injection tests
 ✔ Observability suite
 
----
-
-## Future Improvements
-
-* API Gateway / BFF layer
-* CI/CD automation with GitHub Actions
-* Autoscaling using KEDA
-* Distributed caching (Redis or Memcached)
-* Event-driven architecture with Kafka
-
----
-
-## Final Notes
-
-This project demonstrates **real-world DevOps, SRE, and microservice patterns** used in production systems.
-It is suitable for **portfolio, interviews, cloud engineering practice, and Kubernetes learning**.
 
 
